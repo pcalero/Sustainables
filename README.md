@@ -32,11 +32,11 @@ $ ng serve -o
 
 It will open a new page: http://localhost:4200/
 
-## Improvements:
+## Future improvements:
 
-* Split VendingAPI solution in several projects, decouple the layers and make easier the solution grows.
-* Merge ApiModels of the same entities and include Data Annotations in VendingAPI solution.
-* Creating unit tests in VendingAPI and VendingApp. Mock data.
+Following improvements can be done:
+* Splitting VendingAPI solution in several projects, to decouple layers and make easier the solution grows.
+* Creating unit tests and mocking data in VendingAPI and VendingApp.
 
 ## Authors
 
