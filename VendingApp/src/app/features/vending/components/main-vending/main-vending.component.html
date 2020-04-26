@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <h1>Vending Machine</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <label>Deposited amount: &nbsp;</label> <input type="text" [(ngModel)]="depositedAmount" readonly disabled="true"/> <label>&nbsp; € &nbsp;</label> <button (click)="refundDepositedCoins()">Return money</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4 background-marked">
+      <p>1.- Insert the money</p>
+      <div class="row row-item-full" *ngFor="let coin of coins">
+        <div class="col-5">
+            <p> <button (click)="depositsCoin(coin);">{{coin.value/100}} €</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-8 background-marked">
+      <p>2.- Select the product</p>
+      <div class="row row-item-full" *ngFor="let product of products">
+        <div class="col-5">
+          <button (click)="buyProduct(product)">{{product.name}}</button>
+        </div>
+        <div class="col-3">
+          <p>{{product.price/100}} €</p>
+        </div>
+        <div class="col-4">
+          <p>{{product.quantity}} in stock</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12"></div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+        <p> <label>3.- Box: &nbsp;</label> <label>{{this.result.message}}</label></p>
+        <ng-container *ngFor="let coin of result?.data">
+          <p><button disabled>{{coin.value/100}} €</button>&nbsp; x{{coin.quantity}}<p>
+        </ng-container>
+    </div>
+  </div>
+</div>
